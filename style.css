@@ -5,8 +5,8 @@
 }
 
 .avatar-bg {
-  width: 100px;
-  height: 100px;
+  width: 96px;
+  height: 96px;
   border-radius: 50%;
   background: #ffd800;
   overflow: hidden;
@@ -16,7 +16,7 @@
 }
 
 .avatar-img {
-  width: 90%;
+  width: 82%;
   height: auto;
   display: block;
 }
