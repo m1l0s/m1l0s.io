@@ -39,11 +39,10 @@ body {
 }
 
 .avatar-img {
-  width: 60%;
-  height: 60%;
+  width: 40%;
+  height: auto;
   object-fit: cover;
   object-position: center 26%;
-/*  transform: scale(1.22); */
   display: block;
 }
 
