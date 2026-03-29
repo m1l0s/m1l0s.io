@@ -1,12 +1,12 @@
 .avatar-wrap {
   display: flex;
   justify-content: center;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
 }
 
 .avatar-bg {
-  width: 220px;
-  height: 220px;
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
   background: #ffd800;
   overflow: hidden;
@@ -16,7 +16,7 @@
 }
 
 .avatar-img {
-  width: 92%;
+  width: 90%;
   height: auto;
   display: block;
 }
