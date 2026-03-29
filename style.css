@@ -38,6 +38,7 @@ body {
   justify-content: center;
 }
 
+/* .avatar-bg je ram/krug */
 /* .avatar-bg {
   width: 170px;
   height: 170px;
@@ -50,9 +51,10 @@ body {
   justify-content: center;
 } */
 
+/* .avatar-img je fotka unutar rama */
 .avatar-img {
-  width: 100%;
-  height: 100%;
+  width: 60%;
+  height: 60%;
   object-fit: cover;
   object-position: center 20%;
   display: block;
