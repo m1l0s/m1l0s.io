@@ -43,7 +43,6 @@ body {
   height: 60%;
   object-fit: cover;
   object-position: center 26%;
-  transform: scale(1.22);
   display: block;
 }
 
