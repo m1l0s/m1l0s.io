@@ -57,7 +57,10 @@ body {
   height: 60%;
   object-fit: cover;
   object-position: center 20%;
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
 }
 
 .hero-name {
