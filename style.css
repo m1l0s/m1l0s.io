@@ -38,26 +38,13 @@ body {
   justify-content: center;
 }
 
-/* .avatar-bg je ram/krug */
-/* .avatar-bg {
-  width: 170px;
-  height: 170px;
-  border-radius: 50%;
-  background: #f1d75a;
-  border: 8px solid #ffd400;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-} */
-
-/* .avatar-img je fotka unutar rama */
 .avatar-img {
   width: 60%;
   height: 60%;
   object-fit: cover;
-  object-position: center 20%;
-  display: flex;
+  object-position: center 26%;
+  transform: scale(1.22);
+  display: block;
 }
 
 .hero-name {
