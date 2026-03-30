@@ -57,10 +57,10 @@ body {
 .birds-layer {
   position: fixed;
   inset: 0;
-  pointer-events: none;
   overflow: hidden;
+  pointer-events: none;
   z-index: 0;
-  opacity: 0.22;
+  opacity: 0.14;
 }
 
 .hero {
@@ -68,81 +68,56 @@ body {
   z-index: 1;
 }
 
-.bird {
+.bird-svg {
   position: absolute;
-  width: 14px;
-  height: 8px;
-  color: currentColor;
-  opacity: 0.7;
+  width: 28px;
+  height: 14px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0.75;
 }
 
-.bird::before,
-.bird::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  width: 7px;
-  height: 1.5px;
-  background: currentColor;
-  transform-origin: right center;
-  border-radius: 999px;
-}
+.bird-1 { top: 10%; left: -6%; animation: birdFly1 26s linear infinite; }
+.bird-2 { top: 16%; left: -10%; animation: birdFly2 33s linear infinite; }
+.bird-3 { top: 21%; left: -8%; animation: birdFly3 29s linear infinite; }
+.bird-4 { top: 13%; left: -12%; animation: birdFly4 36s linear infinite; }
+.bird-5 { top: 18%; left: -7%; animation: birdFly5 31s linear infinite; }
 
-.bird::before {
-  left: 0;
-  transform: rotate(-28deg);
-}
-
-.bird::after {
-  right: 0;
-  transform: rotate(28deg);
-}
-
-.bird-1 { top: 14%; left: -5%; animation: fly1 26s linear infinite; }
-.bird-2 { top: 20%; left: -8%; animation: fly2 31s linear infinite; }
-.bird-3 { top: 12%; left: -10%; animation: fly3 28s linear infinite; }
-.bird-4 { top: 26%; left: -6%; animation: fly4 34s linear infinite; }
-.bird-5 { top: 18%; left: -12%; animation: fly5 30s linear infinite; }
-.bird-6 { top: 10%; left: -7%; animation: fly6 36s linear infinite; }
-
-@keyframes fly1 {
+@keyframes birdFly1 {
   0%   { transform: translateX(0) translateY(0) scale(1); }
-  50%  { transform: translateX(55vw) translateY(-10px) scale(1.05); }
+  50%  { transform: translateX(55vw) translateY(-8px) scale(1.05); }
   100% { transform: translateX(115vw) translateY(4px) scale(0.98); }
 }
 
-@keyframes fly2 {
-  0%   { transform: translateX(0) translateY(0) scale(0.9); }
-  50%  { transform: translateX(60vw) translateY(8px) scale(1); }
+@keyframes birdFly2 {
+  0%   { transform: translateX(0) translateY(0) scale(0.95); }
+  50%  { transform: translateX(58vw) translateY(5px) scale(1); }
+  100% { transform: translateX(115vw) translateY(-5px) scale(0.94); }
+}
+
+@keyframes birdFly3 {
+  0%   { transform: translateX(0) translateY(0) scale(1); }
+  50%  { transform: translateX(52vw) translateY(-4px) scale(1.02); }
+  100% { transform: translateX(115vw) translateY(6px) scale(0.97); }
+}
+
+@keyframes birdFly4 {
+  0%   { transform: translateX(0) translateY(0) scale(1.04); }
+  50%  { transform: translateX(60vw) translateY(-7px) scale(1); }
+  100% { transform: translateX(115vw) translateY(8px) scale(0.93); }
+}
+
+@keyframes birdFly5 {
+  0%   { transform: translateX(0) translateY(0) scale(0.96); }
+  50%  { transform: translateX(56vw) translateY(3px) scale(1); }
   100% { transform: translateX(115vw) translateY(-6px) scale(0.95); }
 }
 
-@keyframes fly3 {
-  0%   { transform: translateX(0) translateY(0) scale(1); }
-  50%  { transform: translateX(50vw) translateY(-6px) scale(1.02); }
-  100% { transform: translateX(115vw) translateY(6px) scale(0.96); }
-}
-
-@keyframes fly4 {
-  0%   { transform: translateX(0) translateY(0) scale(1.05); }
-  50%  { transform: translateX(58vw) translateY(-8px) scale(1); }
-  100% { transform: translateX(115vw) translateY(10px) scale(0.92); }
-}
-
-@keyframes fly5 {
-  0%   { transform: translateX(0) translateY(0) scale(0.95); }
-  50%  { transform: translateX(62vw) translateY(5px) scale(1); }
-  100% { transform: translateX(115vw) translateY(-8px) scale(0.94); }
-}
-
-@keyframes fly6 {
-  0%   { transform: translateX(0) translateY(0) scale(1); }
-  50%  { transform: translateX(57vw) translateY(-12px) scale(1.03); }
-  100% { transform: translateX(115vw) translateY(3px) scale(0.97); }
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .bird {
+  .bird-svg {
     animation: none;
   }
 }
