@@ -87,33 +87,48 @@ body {
 .bird-5 { top: 18%; left: -7%; animation: birdFly5 31s linear infinite; }
 
 @keyframes birdFly1 {
-  0%   { transform: translateX(0) translateY(0) scale(1); }
-  50%  { transform: translateX(55vw) translateY(-8px) scale(1.05); }
-  100% { transform: translateX(115vw) translateY(4px) scale(0.98); }
+  0%   { transform: translateX(0) translateY(0px) scale(1); }
+  20%  { transform: translateX(22vw) translateY(-4px) scale(1.02); }
+  40%  { transform: translateX(44vw) translateY(2px) scale(1.04); }
+  60%  { transform: translateX(66vw) translateY(-3px) scale(1.03); }
+  80%  { transform: translateX(88vw) translateY(3px) scale(1); }
+  100% { transform: translateX(115vw) translateY(0px) scale(0.98); }
 }
 
 @keyframes birdFly2 {
-  0%   { transform: translateX(0) translateY(0) scale(0.95); }
-  50%  { transform: translateX(58vw) translateY(5px) scale(1); }
-  100% { transform: translateX(115vw) translateY(-5px) scale(0.94); }
+  0%   { transform: translateX(0) translateY(0px) scale(0.95); }
+  20%  { transform: translateX(23vw) translateY(3px) scale(0.97); }
+  40%  { transform: translateX(46vw) translateY(-2px) scale(1); }
+  60%  { transform: translateX(69vw) translateY(4px) scale(0.99); }
+  80%  { transform: translateX(92vw) translateY(-3px) scale(0.97); }
+  100% { transform: translateX(115vw) translateY(0px) scale(0.94); }
 }
 
 @keyframes birdFly3 {
-  0%   { transform: translateX(0) translateY(0) scale(1); }
-  50%  { transform: translateX(52vw) translateY(-4px) scale(1.02); }
-  100% { transform: translateX(115vw) translateY(6px) scale(0.97); }
+  0%   { transform: translateX(0) translateY(0px) scale(1); }
+  20%  { transform: translateX(21vw) translateY(-3px) scale(1.01); }
+  40%  { transform: translateX(43vw) translateY(3px) scale(1.02); }
+  60%  { transform: translateX(65vw) translateY(-2px) scale(1.01); }
+  80%  { transform: translateX(87vw) translateY(4px) scale(0.99); }
+  100% { transform: translateX(115vw) translateY(0px) scale(0.97); }
 }
 
 @keyframes birdFly4 {
-  0%   { transform: translateX(0) translateY(0) scale(1.04); }
-  50%  { transform: translateX(60vw) translateY(-7px) scale(1); }
-  100% { transform: translateX(115vw) translateY(8px) scale(0.93); }
+  0%   { transform: translateX(0) translateY(0px) scale(1.04); }
+  20%  { transform: translateX(24vw) translateY(-5px) scale(1.03); }
+  40%  { transform: translateX(48vw) translateY(2px) scale(1.01); }
+  60%  { transform: translateX(72vw) translateY(-4px) scale(1); }
+  80%  { transform: translateX(95vw) translateY(3px) scale(0.97); }
+  100% { transform: translateX(115vw) translateY(0px) scale(0.93); }
 }
 
 @keyframes birdFly5 {
-  0%   { transform: translateX(0) translateY(0) scale(0.96); }
-  50%  { transform: translateX(56vw) translateY(3px) scale(1); }
-  100% { transform: translateX(115vw) translateY(-6px) scale(0.95); }
+  0%   { transform: translateX(0) translateY(0px) scale(0.96); }
+  20%  { transform: translateX(22vw) translateY(2px) scale(0.98); }
+  40%  { transform: translateX(45vw) translateY(-3px) scale(1); }
+  60%  { transform: translateX(68vw) translateY(3px) scale(0.99); }
+  80%  { transform: translateX(91vw) translateY(-2px) scale(0.97); }
+  100% { transform: translateX(115vw) translateY(0px) scale(0.95); }
 }
 
 @media (prefers-reduced-motion: reduce) {
