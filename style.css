@@ -1,115 +1,268 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>m1l0s.io</title>
-  <link rel="stylesheet" href="./style.css" />
-</head>
-<body>
-  <div class="birds-layer" aria-hidden="true">
-    <svg class="bird-svg bird-1" viewBox="0 0 40 20">
-      <path d="M2 14C8 7 14 6 20 12C26 6 32 7 38 14" />
-    </svg>
-    <svg class="bird-svg bird-2" viewBox="0 0 40 20">
-      <path d="M2 14C8 8 14 7 20 11C26 7 32 8 38 14" />
-    </svg>
-    <svg class="bird-svg bird-3" viewBox="0 0 40 20">
-      <path d="M2 15C8 9 14 8 20 12C26 8 32 9 38 15" />
-    </svg>
-    <svg class="bird-svg bird-4" viewBox="0 0 40 20">
-      <path d="M2 13C8 7 14 6 20 10C26 6 32 7 38 13" />
-    </svg>
-    <svg class="bird-svg bird-5" viewBox="0 0 40 20">
-      <path d="M2 14C8 8 14 7 20 11C26 7 32 8 38 14" />
-    </svg>
-  </div>
+:root {
+  color-scheme: light dark;
+  box-sizing: border-box;
+}
 
-  <main class="hero">
-    <div class="avatar-wrap">
-      <img src="./assets/me.png" alt="Milos logo" class="avatar-img" />
-    </div>
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
 
-    <p class="hero-text">
-      Our website is under construction, we are working very hard to give you
-      the best experience with this one.
-    </p>
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #ffffff;
+  color: #111111;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-x: hidden;
+}
 
-    <section class="countdown" id="countdown" data-deadline="2026-05-01T00:00:00">
-      <div class="countdown-item">
-        <span class="countdown-value" data-unit="days">00</span>
-        <span class="countdown-label">Days</span>
-      </div>
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #000000;
+    color: #ffffff;
+  }
+}
 
-      <span class="countdown-separator">:</span>
+.hero {
+  position: relative;
+  z-index: 2;
+  width: min(1100px, calc(100% - 32px));
+  min-height: 100vh;
+  padding: 48px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
 
-      <div class="countdown-item">
-        <span class="countdown-value" data-unit="hours">00</span>
-        <span class="countdown-label">Hours</span>
-      </div>
+.avatar-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 28px;
+}
 
-      <span class="countdown-separator">:</span>
+.avatar-img {
+  width: clamp(120px, 18vw, 220px);
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
 
-      <div class="countdown-item">
-        <span class="countdown-value" data-unit="minutes">00</span>
-        <span class="countdown-label">Minutes</span>
-      </div>
+.hero-text {
+  max-width: 900px;
+  margin: 0 auto 46px;
+  font-size: clamp(1.2rem, 1rem + 1vw, 2.2rem);
+  line-height: 1.4;
+  text-align: center;
+  opacity: 0.96;
+}
 
-      <span class="countdown-separator">:</span>
+.countdown {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 44px;
+}
 
-      <div class="countdown-item">
-        <span class="countdown-value" data-unit="seconds">00</span>
-        <span class="countdown-label">Seconds</span>
-      </div>
-    </section>
+.countdown-item {
+  min-width: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-    <div class="hero-actions">
-      <a href="mailto:hello@m1l0s.io?subject=Subscribe" class="hero-btn hero-btn--filled">Subscribe</a>
-      <a href="/about" class="hero-btn hero-btn--outline">More Info</a>
-    </div>
-  </main>
+.countdown-value {
+  font-size: clamp(3.6rem, 8vw, 7.4rem);
+  line-height: 0.95;
+  font-weight: 300;
+  letter-spacing: 0.02em;
+}
 
-  <script>
-    (function () {
-      const root = document.getElementById("countdown");
-      if (!root) return;
+.countdown-separator {
+  font-size: clamp(3.6rem, 8vw, 7.4rem);
+  line-height: 0.95;
+  font-weight: 300;
+  transform: translateY(-2px);
+  opacity: 0.95;
+}
 
-      const deadline = new Date(root.dataset.deadline).getTime();
-      const daysEl = root.querySelector('[data-unit="days"]');
-      const hoursEl = root.querySelector('[data-unit="hours"]');
-      const minutesEl = root.querySelector('[data-unit="minutes"]');
-      const secondsEl = root.querySelector('[data-unit="seconds"]');
+.countdown-label {
+  margin-top: 16px;
+  font-size: clamp(1rem, 0.8rem + 0.6vw, 1.8rem);
+  line-height: 1.2;
+  opacity: 0.45;
+}
 
-      function pad(value) {
-        return String(value).padStart(2, "0");
-      }
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
 
-      function updateCountdown() {
-        const now = Date.now();
-        const diff = deadline - now;
+.hero-btn {
+  min-width: 240px;
+  padding: 18px 34px;
+  border-radius: 999px;
+  border: 2px solid currentColor;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 1rem;
+  font-weight: 700;
+  transition: opacity 0.2s ease, transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+}
 
-        if (diff <= 0) {
-          daysEl.textContent = "00";
-          hoursEl.textContent = "00";
-          minutesEl.textContent = "00";
-          secondsEl.textContent = "00";
-          return;
-        }
+.hero-btn:hover {
+  opacity: 0.88;
+  transform: translateY(-1px);
+}
 
-        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-        const minutes = Math.floor((diff / (1000 * 60)) % 60);
-        const seconds = Math.floor((diff / 1000) % 60);
+.hero-btn--filled {
+  background: #111111;
+  color: #ffffff;
+  border-color: #111111;
+}
 
-        daysEl.textContent = pad(days);
-        hoursEl.textContent = pad(hours);
-        minutesEl.textContent = pad(minutes);
-        secondsEl.textContent = pad(seconds);
-      }
+.hero-btn--outline {
+  background: transparent;
+  color: inherit;
+}
 
-      updateCountdown();
-      setInterval(updateCountdown, 1000);
-    })();
-  </script>
-</body>
-</html>
+@media (prefers-color-scheme: dark) {
+  .hero-btn--filled {
+    background: #ffffff;
+    color: #000000;
+    border-color: #ffffff;
+  }
+}
+
+.birds-layer {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.5;
+}
+
+.bird-svg {
+  position: absolute;
+  width: 18px;
+  height: 9px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0.72;
+}
+
+.bird-1 { top: 10%; left: -6%; animation: birdFly1 26s linear infinite; }
+.bird-2 { top: 16%; left: -10%; animation: birdFly2 33s linear infinite; }
+.bird-3 { top: 21%; left: -8%; animation: birdFly3 29s linear infinite; }
+.bird-4 { top: 13%; left: -12%; animation: birdFly4 36s linear infinite; }
+.bird-5 { top: 18%; left: -7%; animation: birdFly5 31s linear infinite; }
+
+@keyframes birdFly1 {
+  0% { transform: translateX(0) translateY(0px) rotate(-1deg) scale(1); }
+  20% { transform: translateX(22vw) translateY(-3px) rotate(1deg) scale(1.02); }
+  40% { transform: translateX(44vw) translateY(2px) rotate(-1deg) scale(1.03); }
+  60% { transform: translateX(66vw) translateY(-2px) rotate(1deg) scale(1.02); }
+  80% { transform: translateX(88vw) translateY(2px) rotate(-1deg) scale(1); }
+  100% { transform: translateX(115vw) translateY(0px) rotate(0deg) scale(0.98); }
+}
+
+@keyframes birdFly2 {
+  0% { transform: translateX(0) translateY(0px) rotate(1deg) scale(0.95); }
+  20% { transform: translateX(23vw) translateY(2px) rotate(-1deg) scale(0.97); }
+  40% { transform: translateX(46vw) translateY(-2px) rotate(1deg) scale(1); }
+  60% { transform: translateX(69vw) translateY(3px) rotate(-1deg) scale(0.99); }
+  80% { transform: translateX(92vw) translateY(-2px) rotate(1deg) scale(0.97); }
+  100% { transform: translateX(115vw) translateY(0px) rotate(0deg) scale(0.94); }
+}
+
+@keyframes birdFly3 {
+  0% { transform: translateX(0) translateY(0px) rotate(-1deg) scale(1); }
+  20% { transform: translateX(21vw) translateY(-2px) rotate(1deg) scale(1.01); }
+  40% { transform: translateX(43vw) translateY(2px) rotate(-1deg) scale(1.02); }
+  60% { transform: translateX(65vw) translateY(-2px) rotate(1deg) scale(1.01); }
+  80% { transform: translateX(87vw) translateY(3px) rotate(-1deg) scale(0.99); }
+  100% { transform: translateX(115vw) translateY(0px) rotate(0deg) scale(0.97); }
+}
+
+@keyframes birdFly4 {
+  0% { transform: translateX(0) translateY(0px) rotate(1deg) scale(1.04); }
+  20% { transform: translateX(24vw) translateY(-3px) rotate(-1deg) scale(1.03); }
+  40% { transform: translateX(48vw) translateY(2px) rotate(1deg) scale(1.01); }
+  60% { transform: translateX(72vw) translateY(-2px) rotate(-1deg) scale(1); }
+  80% { transform: translateX(95vw) translateY(2px) rotate(1deg) scale(0.97); }
+  100% { transform: translateX(115vw) translateY(0px) rotate(0deg) scale(0.93); }
+}
+
+@keyframes birdFly5 {
+  0% { transform: translateX(0) translateY(0px) rotate(-1deg) scale(0.96); }
+  20% { transform: translateX(22vw) translateY(2px) rotate(1deg) scale(0.98); }
+  40% { transform: translateX(45vw) translateY(-2px) rotate(-1deg) scale(1); }
+  60% { transform: translateX(68vw) translateY(2px) rotate(1deg) scale(0.99); }
+  80% { transform: translateX(91vw) translateY(-2px) rotate(-1deg) scale(0.97); }
+  100% { transform: translateX(115vw) translateY(0px) rotate(0deg) scale(0.95); }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    width: min(100%, calc(100% - 24px));
+    padding: 36px 0;
+  }
+
+  .avatar-wrap {
+    margin-bottom: 22px;
+  }
+
+  .hero-text {
+    margin-bottom: 34px;
+  }
+
+  .countdown {
+    gap: 8px;
+    margin-bottom: 34px;
+  }
+
+  .countdown-item {
+    min-width: 84px;
+  }
+
+  .countdown-label {
+    margin-top: 10px;
+  }
+
+  .hero-actions {
+    width: 100%;
+    gap: 14px;
+  }
+
+  .hero-btn {
+    width: min(100%, 320px);
+    min-width: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bird-svg {
+    animation: none;
+  }
+
+  .hero-btn {
+    transition: none;
+  }
+}
