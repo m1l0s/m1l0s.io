@@ -1,133 +1,115 @@
-:root {
-  color-scheme: light dark;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>m1l0s.io</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="birds-layer" aria-hidden="true">
+    <svg class="bird-svg bird-1" viewBox="0 0 40 20">
+      <path d="M2 14C8 7 14 6 20 12C26 6 32 7 38 14" />
+    </svg>
+    <svg class="bird-svg bird-2" viewBox="0 0 40 20">
+      <path d="M2 14C8 8 14 7 20 11C26 7 32 8 38 14" />
+    </svg>
+    <svg class="bird-svg bird-3" viewBox="0 0 40 20">
+      <path d="M2 15C8 9 14 8 20 12C26 8 32 9 38 15" />
+    </svg>
+    <svg class="bird-svg bird-4" viewBox="0 0 40 20">
+      <path d="M2 13C8 7 14 6 20 10C26 6 32 7 38 13" />
+    </svg>
+    <svg class="bird-svg bird-5" viewBox="0 0 40 20">
+      <path d="M2 14C8 8 14 7 20 11C26 7 32 8 38 14" />
+    </svg>
+  </div>
 
-* {
-  box-sizing: border-box;
-}
+  <main class="hero">
+    <div class="avatar-wrap">
+      <img src="./assets/me.png" alt="Milos logo" class="avatar-img" />
+    </div>
 
-body {
-  margin: 0;
-  min-height: 100vh;
-  background: #ffffff;
-  color: #111111;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+    <p class="hero-text">
+      Our website is under construction, we are working very hard to give you
+      the best experience with this one.
+    </p>
 
-@media (prefers-color-scheme: dark) {
-  body {
-    background: #000000;
-    color: #ffffff;
-  }
-}
+    <section class="countdown" id="countdown" data-deadline="2026-05-01T00:00:00">
+      <div class="countdown-item">
+        <span class="countdown-value" data-unit="days">00</span>
+        <span class="countdown-label">Days</span>
+      </div>
 
-.hero {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
+      <span class="countdown-separator">:</span>
 
-.avatar-wrap {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+      <div class="countdown-item">
+        <span class="countdown-value" data-unit="hours">00</span>
+        <span class="countdown-label">Hours</span>
+      </div>
 
-.avatar-img {
-  width: 30%;
-  height: auto;
-  object-fit: cover;
-  object-position: center 26%;
-  display: block;
-}
+      <span class="countdown-separator">:</span>
 
-.hero-name {
-  margin: 14px 0 0;
-  font-size: 1.1rem;
-  line-height: 1;
-  text-align: center;
-  opacity: 0.9;
-}
+      <div class="countdown-item">
+        <span class="countdown-value" data-unit="minutes">00</span>
+        <span class="countdown-label">Minutes</span>
+      </div>
 
-.birds-layer {
-  position: fixed;
-  inset: 0;
-  overflow: hidden;
-  pointer-events: none;
-  z-index: 0;
-  opacity: 0.5;
-}
+      <span class="countdown-separator">:</span>
 
-.bird-svg {
-  position: absolute;
-  width: 18px;
-  height: 9px;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 1.6;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  opacity: 0.72;
-}
+      <div class="countdown-item">
+        <span class="countdown-value" data-unit="seconds">00</span>
+        <span class="countdown-label">Seconds</span>
+      </div>
+    </section>
 
-.bird-1 { top: 10%; left: -6%; animation: birdFly1 26s linear infinite; }
-.bird-2 { top: 16%; left: -10%; animation: birdFly2 33s linear infinite; }
-.bird-3 { top: 21%; left: -8%; animation: birdFly3 29s linear infinite; }
-.bird-4 { top: 13%; left: -12%; animation: birdFly4 36s linear infinite; }
-.bird-5 { top: 18%; left: -7%; animation: birdFly5 31s linear infinite; }
+    <div class="hero-actions">
+      <a href="mailto:hello@m1l0s.io?subject=Subscribe" class="hero-btn hero-btn--filled">Subscribe</a>
+      <a href="/about" class="hero-btn hero-btn--outline">More Info</a>
+    </div>
+  </main>
 
-@keyframes birdFly1 {
-  0%   { transform: translateX(0) translateY(0px) rotate(-1deg) scale(1); }
-  20%  { transform: translateX(22vw) translateY(-3px) rotate(1deg) scale(1.02); }
-  40%  { transform: translateX(44vw) translateY(2px) rotate(-1deg) scale(1.03); }
-  60%  { transform: translateX(66vw) translateY(-2px) rotate(1deg) scale(1.02); }
-  80%  { transform: translateX(88vw) translateY(2px) rotate(-1deg) scale(1); }
-  100% { transform: translateX(115vw) translateY(0px) rotate(0deg) scale(0.98); }
-}
+  <script>
+    (function () {
+      const root = document.getElementById("countdown");
+      if (!root) return;
 
-@keyframes birdFly2 {
-  0%   { transform: translateX(0) translateY(0px) rotate(1deg) scale(0.95); }
-  20%  { transform: translateX(23vw) translateY(2px) rotate(-1deg) scale(0.97); }
-  40%  { transform: translateX(46vw) translateY(-2px) rotate(1deg) scale(1); }
-  60%  { transform: translateX(69vw) translateY(3px) rotate(-1deg) scale(0.99); }
-  80%  { transform: translateX(92vw) translateY(-2px) rotate(1deg) scale(0.97); }
-  100% { transform: translateX(115vw) translateY(0px) rotate(0deg) scale(0.94); }
-}
+      const deadline = new Date(root.dataset.deadline).getTime();
+      const daysEl = root.querySelector('[data-unit="days"]');
+      const hoursEl = root.querySelector('[data-unit="hours"]');
+      const minutesEl = root.querySelector('[data-unit="minutes"]');
+      const secondsEl = root.querySelector('[data-unit="seconds"]');
 
-@keyframes birdFly3 {
-  0%   { transform: translateX(0) translateY(0px) rotate(-1deg) scale(1); }
-  20%  { transform: translateX(21vw) translateY(-2px) rotate(1deg) scale(1.01); }
-  40%  { transform: translateX(43vw) translateY(2px) rotate(-1deg) scale(1.02); }
-  60%  { transform: translateX(65vw) translateY(-2px) rotate(1deg) scale(1.01); }
-  80%  { transform: translateX(87vw) translateY(3px) rotate(-1deg) scale(0.99); }
-  100% { transform: translateX(115vw) translateY(0px) rotate(0deg) scale(0.97); }
-}
+      function pad(value) {
+        return String(value).padStart(2, "0");
+      }
 
-@keyframes birdFly4 {
-  0%   { transform: translateX(0) translateY(0px) rotate(1deg) scale(1.04); }
-  20%  { transform: translateX(24vw) translateY(-3px) rotate(-1deg) scale(1.03); }
-  40%  { transform: translateX(48vw) translateY(2px) rotate(1deg) scale(1.01); }
-  60%  { transform: translateX(72vw) translateY(-2px) rotate(-1deg) scale(1); }
-  80%  { transform: translateX(95vw) translateY(2px) rotate(1deg) scale(0.97); }
-  100% { transform: translateX(115vw) translateY(0px) rotate(0deg) scale(0.93); }
-}
+      function updateCountdown() {
+        const now = Date.now();
+        const diff = deadline - now;
 
-@keyframes birdFly5 {
-  0%   { transform: translateX(0) translateY(0px) rotate(-1deg) scale(0.96); }
-  20%  { transform: translateX(22vw) translateY(2px) rotate(1deg) scale(0.98); }
-  40%  { transform: translateX(45vw) translateY(-2px) rotate(-1deg) scale(1); }
-  60%  { transform: translateX(68vw) translateY(2px) rotate(1deg) scale(0.99); }
-  80%  { transform: translateX(91vw) translateY(-2px) rotate(-1deg) scale(0.97); }
-  100% { transform: translateX(115vw) translateY(0px) rotate(0deg) scale(0.95); }
-}
+        if (diff <= 0) {
+          daysEl.textContent = "00";
+          hoursEl.textContent = "00";
+          minutesEl.textContent = "00";
+          secondsEl.textContent = "00";
+          return;
+        }
 
-@media (prefers-reduced-motion: reduce) {
-  .bird-svg {
-    animation: none;
-  }
-}
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((diff / (1000 * 60)) % 60);
+        const seconds = Math.floor((diff / 1000) % 60);
+
+        daysEl.textContent = pad(days);
+        hoursEl.textContent = pad(hours);
+        minutesEl.textContent = pad(minutes);
+        secondsEl.textContent = pad(seconds);
+      }
+
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+    })();
+  </script>
+</body>
+</html>
