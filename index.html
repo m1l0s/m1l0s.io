@@ -2,36 +2,114 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>m1l0s.io</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
+  <div class="birds-layer" aria-hidden="true">
+    <svg class="bird-svg bird-1" viewBox="0 0 40 20">
+      <path d="M2 14C8 7 14 6 20 12C26 6 32 7 38 14" />
+    </svg>
+    <svg class="bird-svg bird-2" viewBox="0 0 40 20">
+      <path d="M2 14C8 8 14 7 20 11C26 7 32 8 38 14" />
+    </svg>
+    <svg class="bird-svg bird-3" viewBox="0 0 40 20">
+      <path d="M2 15C8 9 14 8 20 12C26 8 32 9 38 15" />
+    </svg>
+    <svg class="bird-svg bird-4" viewBox="0 0 40 20">
+      <path d="M2 13C8 7 14 6 20 10C26 6 32 7 38 13" />
+    </svg>
+    <svg class="bird-svg bird-5" viewBox="0 0 40 20">
+      <path d="M2 14C8 8 14 7 20 11C26 7 32 8 38 14" />
+    </svg>
+  </div>
 
-<div class="birds-layer" aria-hidden="true">
-  <svg class="bird-svg bird-1" viewBox="0 0 40 20">
-    <path d="M2 14C8 7 14 6 20 12C26 6 32 7 38 14" />
-  </svg>
-  <svg class="bird-svg bird-2" viewBox="0 0 40 20">
-    <path d="M2 14C8 8 14 7 20 11C26 7 32 8 38 14" />
-  </svg>
-  <svg class="bird-svg bird-3" viewBox="0 0 40 20">
-    <path d="M2 15C8 9 14 8 20 12C26 8 32 9 38 15" />
-  </svg>
-  <svg class="bird-svg bird-4" viewBox="0 0 40 20">
-    <path d="M2 13C8 7 14 6 20 10C26 6 32 7 38 13" />
-  </svg>
-  <svg class="bird-svg bird-5" viewBox="0 0 40 20">
-    <path d="M2 14C8 8 14 7 20 11C26 7 32 8 38 14" />
-  </svg>
-</div>
-
-  <div class="hero">
+  <main class="hero">
     <div class="avatar-wrap">
-      <img src="./assets/me.png" alt="Milos portrait" class="avatar-img" />
+      <img src="./assets/me.png" alt="Milos logo" class="avatar-img" />
     </div>
 
-    <p class="hero-name">m1l0s</p>
-  </div>
+    <p class="hero-text">
+      Our website is under construction, we are working very hard to give you
+      the best experience with this one.
+    </p>
+
+    <section class="countdown" id="countdown" data-deadline="2026-05-01T00:00:00">
+      <div class="countdown-item">
+        <span class="countdown-value" data-unit="days">00</span>
+        <span class="countdown-label">Days</span>
+      </div>
+
+      <span class="countdown-separator">:</span>
+
+      <div class="countdown-item">
+        <span class="countdown-value" data-unit="hours">00</span>
+        <span class="countdown-label">Hours</span>
+      </div>
+
+      <span class="countdown-separator">:</span>
+
+      <div class="countdown-item">
+        <span class="countdown-value" data-unit="minutes">00</span>
+        <span class="countdown-label">Minutes</span>
+      </div>
+
+      <span class="countdown-separator">:</span>
+
+      <div class="countdown-item">
+        <span class="countdown-value" data-unit="seconds">00</span>
+        <span class="countdown-label">Seconds</span>
+      </div>
+    </section>
+
+    <div class="hero-actions">
+      <a href="mailto:hello@m1l0s.io?subject=Subscribe" class="hero-btn hero-btn--filled">Subscribe</a>
+      <a href="/about" class="hero-btn hero-btn--outline">More Info</a>
+    </div>
+  </main>
+
+  <script>
+    (function () {
+      const root = document.getElementById("countdown");
+      if (!root) return;
+
+      const deadline = new Date(root.dataset.deadline).getTime();
+      const daysEl = root.querySelector('[data-unit="days"]');
+      const hoursEl = root.querySelector('[data-unit="hours"]');
+      const minutesEl = root.querySelector('[data-unit="minutes"]');
+      const secondsEl = root.querySelector('[data-unit="seconds"]');
+
+      function pad(value) {
+        return String(value).padStart(2, "0");
+      }
+
+      function updateCountdown() {
+        const now = Date.now();
+        const diff = deadline - now;
+
+        if (diff <= 0) {
+          daysEl.textContent = "00";
+          hoursEl.textContent = "00";
+          minutesEl.textContent = "00";
+          secondsEl.textContent = "00";
+          return;
+        }
+
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((diff / (1000 * 60)) % 60);
+        const seconds = Math.floor((diff / 1000) % 60);
+
+        daysEl.textContent = pad(days);
+        hoursEl.textContent = pad(hours);
+        minutesEl.textContent = pad(minutes);
+        secondsEl.textContent = pad(seconds);
+      }
+
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+    })();
+  </script>
 </body>
 </html>
