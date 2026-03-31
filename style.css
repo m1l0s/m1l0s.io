@@ -568,3 +568,30 @@ body {
     transition: none;
   }
 }
+
+/* ABOUT BUTTONS - inverted compared to homepage */
+.about-btn--contact {
+  background: transparent;
+  color: #111111;
+  border-color: #111111;
+}
+
+.about-btn--home {
+  background: #111111;
+  color: #ffffff;
+  border-color: #111111;
+}
+
+@media (prefers-color-scheme: dark) {
+  .about-btn--contact {
+    background: transparent;
+    color: #ffffff;
+    border-color: #ffffff;
+  }
+
+  .about-btn--home {
+    background: #ffffff;
+    color: #000000;
+    border-color: #ffffff;
+  }
+}
