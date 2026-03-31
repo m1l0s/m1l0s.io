@@ -201,31 +201,31 @@ body {
 .bird-1 {
   top: 14vh;
   left: -60px;
-  animation: birdFly1 12s linear infinite;
+  animation: birdFly1 22s linear infinite;
 }
 
 .bird-2 {
   top: 24vh;
   left: -90px;
-  animation: birdFly2 14s linear infinite;
+  animation: birdFly2 26s linear infinite;
 }
 
 .bird-3 {
   top: 34vh;
   left: -70px;
-  animation: birdFly3 11s linear infinite;
+  animation: birdFly3 20s linear infinite;
 }
 
 .bird-4 {
   top: 18vh;
   left: -110px;
-  animation: birdFly4 15s linear infinite;
+  animation: birdFly4 28s linear infinite;
 }
 
 .bird-5 {
   top: 42vh;
   left: -80px;
-  animation: birdFly5 13s linear infinite;
+  animation: birdFly5 24s linear infinite;
 }
 
 @keyframes birdFly1 {
