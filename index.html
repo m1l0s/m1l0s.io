@@ -7,27 +7,27 @@
   <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
-  <div class="birds-layer" aria-hidden="true">
-    <svg class="bird-svg bird-1" viewBox="0 0 40 20">
-      <path d="M2 14C8 7 14 6 20 12C26 6 32 7 38 14" />
-    </svg>
-    <svg class="bird-svg bird-2" viewBox="0 0 40 20">
-      <path d="M2 14C8 8 14 7 20 11C26 7 32 8 38 14" />
-    </svg>
-    <svg class="bird-svg bird-3" viewBox="0 0 40 20">
-      <path d="M2 15C8 9 14 8 20 12C26 8 32 9 38 15" />
-    </svg>
-    <svg class="bird-svg bird-4" viewBox="0 0 40 20">
-      <path d="M2 13C8 7 14 6 20 10C26 6 32 7 38 13" />
-    </svg>
-    <svg class="bird-svg bird-5" viewBox="0 0 40 20">
-      <path d="M2 14C8 8 14 7 20 11C26 7 32 8 38 14" />
-    </svg>
-  </div>
-
   <main class="hero">
     <div class="avatar-wrap">
       <img src="./assets/me.png" alt="Milos logo" class="avatar-img" />
+
+      <div class="birds-layer avatar-birds" aria-hidden="true">
+        <svg class="bird-svg bird-1" viewBox="0 0 40 20">
+          <path d="M2 14C8 7 14 6 20 12C26 6 32 7 38 14" />
+        </svg>
+        <svg class="bird-svg bird-2" viewBox="0 0 40 20">
+          <path d="M2 14C8 8 14 7 20 11C26 7 32 8 38 14" />
+        </svg>
+        <svg class="bird-svg bird-3" viewBox="0 0 40 20">
+          <path d="M2 15C8 9 14 8 20 12C26 8 32 9 38 15" />
+        </svg>
+        <svg class="bird-svg bird-4" viewBox="0 0 40 20">
+          <path d="M2 13C8 7 14 6 20 10C26 6 32 7 38 13" />
+        </svg>
+        <svg class="bird-svg bird-5" viewBox="0 0 40 20">
+          <path d="M2 14C8 8 14 7 20 11C26 7 32 8 38 14" />
+        </svg>
+      </div>
     </div>
 
     <p class="hero-text">
@@ -35,31 +35,31 @@
       the best experience with this one.
     </p>
 
-    <section class="countdown" id="countdown" data-deadline="2026-05-01T00:00:00">
-      <div class="countdown-item">
-        <span class="countdown-value" data-unit="days">00</span>
-        <span class="countdown-label">Days</span>
+    <section class="countdown" id="countdown" data-deadline="2026-05-01T00:00:00" aria-label="Countdown timer">
+      <div class="countdown-block">
+        <div class="countdown-number" data-unit="days">27</div>
+        <div class="countdown-label">Days</div>
       </div>
 
-      <span class="countdown-separator">:</span>
+      <div class="countdown-colon">:</div>
 
-      <div class="countdown-item">
-        <span class="countdown-value" data-unit="hours">00</span>
-        <span class="countdown-label">Hours</span>
+      <div class="countdown-block">
+        <div class="countdown-number" data-unit="hours">18</div>
+        <div class="countdown-label">Hours</div>
       </div>
 
-      <span class="countdown-separator">:</span>
+      <div class="countdown-colon">:</div>
 
-      <div class="countdown-item">
-        <span class="countdown-value" data-unit="minutes">00</span>
-        <span class="countdown-label">Minutes</span>
+      <div class="countdown-block">
+        <div class="countdown-number" data-unit="minutes">31</div>
+        <div class="countdown-label">Minutes</div>
       </div>
 
-      <span class="countdown-separator">:</span>
+      <div class="countdown-colon">:</div>
 
-      <div class="countdown-item">
-        <span class="countdown-value" data-unit="seconds">00</span>
-        <span class="countdown-label">Seconds</span>
+      <div class="countdown-block">
+        <div class="countdown-number" data-unit="seconds">38</div>
+        <div class="countdown-label">Seconds</div>
       </div>
     </section>
 
