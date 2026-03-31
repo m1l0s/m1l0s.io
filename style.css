@@ -198,35 +198,11 @@ body {
   z-index: 20;
 }
 
-.bird-1 {
-  top: 14vh;
-  left: -60px;
-  animation: birdFly1 22s linear infinite;
-}
-
-.bird-2 {
-  top: 24vh;
-  left: -90px;
-  animation: birdFly2 26s linear infinite;
-}
-
-.bird-3 {
-  top: 34vh;
-  left: -70px;
-  animation: birdFly3 20s linear infinite;
-}
-
-.bird-4 {
-  top: 18vh;
-  left: -110px;
-  animation: birdFly4 28s linear infinite;
-}
-
-.bird-5 {
-  top: 42vh;
-  left: -80px;
-  animation: birdFly5 24s linear infinite;
-}
+.bird-1 { top: 14vh; left: -60px; animation: birdFly1 28s linear infinite; }
+.bird-2 { top: 24vh; left: -90px; animation: birdFly2 32s linear infinite; }
+.bird-3 { top: 34vh; left: -70px; animation: birdFly3 26s linear infinite; }
+.bird-4 { top: 18vh; left: -110px; animation: birdFly4 30s linear infinite; }
+.bird-5 { top: 42vh; left: -80px; animation: birdFly5 27s linear infinite; }
 
 @keyframes birdFly1 {
   0% {
