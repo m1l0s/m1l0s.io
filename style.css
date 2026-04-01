@@ -185,6 +185,19 @@ body {
   }
 }
 
+@media (max-width: 560px) {
+  .avatar-wrap {
+    width: 90px;
+    top: 16px;
+  }
+
+  .hero-actions,
+  .about-actions {
+    gap: 10px;
+    bottom: 20px;
+  }
+}
+
 /* BIRDS */
 
 .bird-svg {
@@ -339,6 +352,10 @@ body {
 
 .about-actions {
   margin-top: 4px;
+}
+
+.hero {
+  padding-bottom: calc(clamp(28px, 4vh, 48px) + 80px);
 }
 
 /* SMALL SCREENS */
