@@ -45,9 +45,12 @@ body {
 }
 
 .avatar-wrap {
-  position: relative;
+  position: fixed;
+  top: clamp(20px, 3vh, 32px);
+  left: 50%;
+  transform: translateX(-50%);
   width: clamp(120px, 16vw, 210px);
-  margin: 0 auto 24px;
+  z-index: 10;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -314,10 +317,6 @@ body {
   justify-content: center;
 }
 
-.about-avatar {
-  margin-bottom: 18px;
-}
-
 .about-title {
   margin: 0 0 18px;
   font-size: clamp(2rem, 5vw, 3.4rem);
@@ -423,4 +422,12 @@ body {
   .about-text {
     margin-bottom: 22px;
   }
+}
+
+.hero {
+  padding-top: calc(clamp(20px, 3vh, 32px) + clamp(120px, 16vw, 210px) + 24px);
+}
+
+.about-hero {
+  padding-top: calc(clamp(20px, 3vh, 32px) + clamp(120px, 16vw, 210px) + 24px);
 }
