@@ -34,32 +34,89 @@
       A website about identity and ideas, still quietly under construction.
     </p>
 
-    <div class="countdown" aria-label="Countdown">
-      <div class="countdown-block">
-        <div class="countdown-number">88</div>
-        <div class="countdown-label">Days</div>
-      </div>
-      <div class="countdown-colon">:</div>
-      <div class="countdown-block">
-        <div class="countdown-number">23</div>
-        <div class="countdown-label">Hours</div>
-      </div>
-      <div class="countdown-colon">:</div>
-      <div class="countdown-block">
-        <div class="countdown-number">59</div>
-        <div class="countdown-label">Minutes</div>
-      </div>
-      <div class="countdown-colon">:</div>
-      <div class="countdown-block">
-        <div class="countdown-number">59</div>
-        <div class="countdown-label">Seconds</div>
+    <div class="countdown-wrap">
+      <input type="datetime-local" id="countdownTarget" value="2026-04-10T18:30" />
+
+      <div class="countdown" aria-label="Countdown">
+        <div class="countdown-block">
+          <div class="countdown-number" id="days">0</div>
+          <div class="countdown-label">Days</div>
+        </div>
+
+        <div class="countdown-colon">:</div>
+
+        <div class="countdown-block">
+          <div class="countdown-number" id="hours">00</div>
+          <div class="countdown-label">Hours</div>
+        </div>
+
+        <div class="countdown-colon">:</div>
+
+        <div class="countdown-block">
+          <div class="countdown-number" id="minutes">00</div>
+          <div class="countdown-label">Minutes</div>
+        </div>
+
+        <div class="countdown-colon">:</div>
+
+        <div class="countdown-block">
+          <div class="countdown-number" id="seconds">00</div>
+          <div class="countdown-label">Seconds</div>
+        </div>
       </div>
     </div>
 
     <div class="hero-actions">
-      <a href="https://example.com" class="hero-btn hero-btn--filled" target="_blank" rel="noopener noreferrer">Subscribe</a>
-      <a href="./about.html" class="hero-btn hero-btn--outline">More Info</a>
+      <a
+        href="https://example.com"
+        class="hero-btn hero-btn--filled"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Subscribe
+      </a>
+
+      <a href="./about.html" class="hero-btn hero-btn--outline">
+        More Info
+      </a>
     </div>
   </main>
+
+  <script>
+    const countdownTargetInput = document.getElementById("countdownTarget");
+    const daysEl = document.getElementById("days");
+    const hoursEl = document.getElementById("hours");
+    const minutesEl = document.getElementById("minutes");
+    const secondsEl = document.getElementById("seconds");
+
+    function updateCountdown() {
+      const targetDate = new Date(countdownTargetInput.value);
+      const now = new Date();
+      const diff = targetDate - now;
+
+      if (isNaN(targetDate.getTime()) || diff <= 0) {
+        daysEl.textContent = "0";
+        hoursEl.textContent = "00";
+        minutesEl.textContent = "00";
+        secondsEl.textContent = "00";
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+
+      daysEl.textContent = String(days);
+      hoursEl.textContent = String(hours).padStart(2, "0");
+      minutesEl.textContent = String(minutes).padStart(2, "0");
+      secondsEl.textContent = String(seconds).padStart(2, "0");
+    }
+
+    countdownTargetInput.addEventListener("input", updateCountdown);
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
 </body>
 </html>
