@@ -30,7 +30,7 @@ body {
   }
 }
 
-/* SHARED PAGE LAYOUT */
+/* PAGE LAYOUT */
 
 .hero,
 .about-page {
@@ -122,6 +122,11 @@ body {
   flex-wrap: nowrap;
   margin: 0 auto 28px;
   width: 100%;
+}
+
+.countdown--ghost {
+  visibility: hidden;
+  pointer-events: none;
 }
 
 .countdown-block {
