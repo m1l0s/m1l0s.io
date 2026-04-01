@@ -38,7 +38,7 @@ body {
   margin: 0 auto;
   padding-top: calc(clamp(20px, 3vh, 32px) + clamp(120px, 16vw, 210px) + 24px);
   padding-right: 20px;
-  padding-bottom: clamp(20px, 3vh, 32px);
+  padding-bottom: 28px;
   padding-left: 20px;
   display: flex;
   flex-direction: column;
@@ -94,6 +94,7 @@ body {
   flex-wrap: nowrap;
   margin: 0 auto 28px;
   width: 100%;
+  min-height: clamp(96px, 14vw, 150px);
 }
 
 .countdown-block {
@@ -137,7 +138,7 @@ body {
   gap: 18px;
   flex-wrap: wrap;
   width: 100%;
-  margin-top: 28px;
+  margin-top: 0;
 }
 
 .hero-btn {
@@ -152,7 +153,9 @@ body {
   font-weight: 700;
   letter-spacing: 0.045em;
   border: 2px solid #111111;
-  transition: transform 0.2s ease, opacity 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+  background: transparent;
+  color: #111111;
+  transition: transform 0.2s ease, opacity 0.2s ease, background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
 .hero-btn:hover {
@@ -177,6 +180,7 @@ body {
 
   .hero-btn {
     border-color: #ffffff;
+    color: #ffffff;
   }
 
   .hero-btn--filled {
@@ -185,6 +189,7 @@ body {
   }
 
   .hero-btn--outline {
+    background: transparent;
     color: #ffffff;
   }
 }
@@ -312,7 +317,7 @@ body {
 }
 
 .about-hero {
-  width: min(100%, ~710.32px);
+  width: min(100%, 860px);
   margin: 0 auto;
   padding-top: calc(clamp(20px, 3vh, 32px) + clamp(120px, 16vw, 210px) + 24px);
   text-align: center;
@@ -327,22 +332,25 @@ body {
 }
 
 .about-content {
-  max-width: 710.32px;
+  max-width: 760px;
   margin: 0 auto 28px;
   font-size: clamp(1rem, 0.72rem + 0.95vw, 1.24rem);
   line-height: 1.55;
   font-weight: 400;
 }
 
-.about-actions {
-  margin-top: 28px;
+.about-countdown-spacer {
+  width: 100%;
+  min-height: clamp(96px, 14vw, 150px);
+  margin: 0 auto 28px;
 }
 
 /* SMALL SCREENS */
 
 @media (max-width: 820px) {
   .countdown-number,
-  .countdown-colon {
+  .countdown-colon,
+  .about-countdown-spacer {
     font-size: clamp(2.4rem, 10vw, 4.9rem);
   }
 
@@ -402,25 +410,21 @@ body {
     font-size: 0.74rem;
   }
 
-.hero-actions,
-.about-actions {
-  gap: 10px;
-  padding-inline: 0;
-  margin-top: 24px;
-}
+  .about-countdown-spacer {
+    min-height: 92px;
+    margin-bottom: 24px;
+  }
+
+  .hero-actions,
+  .about-actions {
+    gap: 10px;
+    margin-top: 0;
+  }
 
   .hero-btn {
     width: min(100%, 320px);
     min-width: 0;
     padding: 14px 22px;
     font-size: 0.86rem;
-  }
-
-  .about-content {
-    margin-bottom: 22px;
-  }
-
-  .about-actions {
-    margin-top: 24px;
   }
 }
