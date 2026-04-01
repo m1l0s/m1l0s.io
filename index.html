@@ -31,93 +31,35 @@
     </div>
 
     <p class="hero-text">
-      Website is under construction, please come back later.
+      A website about identity and ideas, still quietly under construction.
     </p>
 
-    <section
-      class="countdown"
-      id="countdown"
-      data-deadline="2026-04-09T16:25:00"
-      aria-label="Countdown timer"
-    >
+    <div class="countdown" aria-label="Countdown">
       <div class="countdown-block">
-        <div class="countdown-number" data-unit="days">00</div>
+        <div class="countdown-number">88</div>
         <div class="countdown-label">Days</div>
       </div>
-
       <div class="countdown-colon">:</div>
-
       <div class="countdown-block">
-        <div class="countdown-number" data-unit="hours">00</div>
+        <div class="countdown-number">23</div>
         <div class="countdown-label">Hours</div>
       </div>
-
       <div class="countdown-colon">:</div>
-
       <div class="countdown-block">
-        <div class="countdown-number" data-unit="minutes">00</div>
+        <div class="countdown-number">59</div>
         <div class="countdown-label">Minutes</div>
       </div>
-
       <div class="countdown-colon">:</div>
-
       <div class="countdown-block">
-        <div class="countdown-number" data-unit="seconds">00</div>
+        <div class="countdown-number">59</div>
         <div class="countdown-label">Seconds</div>
       </div>
-    </section>
+    </div>
 
     <div class="hero-actions">
-      <a href="mailto:hello@m1l0s.io?subject=Subscribe" class="hero-btn hero-btn--filled">
-        Subscribe
-      </a>
-      <a href="/about.html" class="hero-btn hero-btn--outline">
-        More Info
-      </a>
+      <a href="https://example.com" class="hero-btn hero-btn--filled" target="_blank" rel="noopener noreferrer">Subscribe</a>
+      <a href="./about.html" class="hero-btn hero-btn--outline">More Info</a>
     </div>
   </main>
-
-  <script>
-    (function () {
-      const root = document.getElementById("countdown");
-      if (!root) return;
-
-      const deadline = new Date(root.dataset.deadline).getTime();
-      const daysEl = root.querySelector('[data-unit="days"]');
-      const hoursEl = root.querySelector('[data-unit="hours"]');
-      const minutesEl = root.querySelector('[data-unit="minutes"]');
-      const secondsEl = root.querySelector('[data-unit="seconds"]');
-
-      function pad(value) {
-        return String(value).padStart(2, "0");
-      }
-
-      function updateCountdown() {
-        const now = Date.now();
-        const diff = deadline - now;
-
-        if (diff <= 0) {
-          daysEl.textContent = "00";
-          hoursEl.textContent = "00";
-          minutesEl.textContent = "00";
-          secondsEl.textContent = "00";
-          return;
-        }
-
-        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-        const minutes = Math.floor((diff / (1000 * 60)) % 60);
-        const seconds = Math.floor((diff / 1000) % 60);
-
-        daysEl.textContent = pad(days);
-        hoursEl.textContent = pad(hours);
-        minutesEl.textContent = pad(minutes);
-        secondsEl.textContent = pad(seconds);
-      }
-
-      updateCountdown();
-      setInterval(updateCountdown, 1000);
-    })();
-  </script>
 </body>
 </html>
