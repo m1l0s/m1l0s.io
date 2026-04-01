@@ -312,7 +312,7 @@ body {
 }
 
 .about-hero {
-  width: min(100%, 860px);
+  width: min(100%, ~710.32px);
   margin: 0 auto;
   padding-top: calc(clamp(20px, 3vh, 32px) + clamp(120px, 16vw, 210px) + 24px);
   text-align: center;
