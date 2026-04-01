@@ -35,7 +35,6 @@
     </p>
 
     <div class="countdown-wrap">
-      <input type="datetime-local" id="countdownTarget" value="2026-04-09T16:25" />
 
       <div class="countdown" aria-label="Countdown">
         <div class="countdown-block">
@@ -82,41 +81,40 @@
     </div>
   </main>
 
-  <script>
-    const countdownTargetInput = document.getElementById("countdownTarget");
-    const daysEl = document.getElementById("days");
-    const hoursEl = document.getElementById("hours");
-    const minutesEl = document.getElementById("minutes");
-    const secondsEl = document.getElementById("seconds");
+<script>
+  const COUNTDOWN_TARGET = "2026-04-09T16:25:00";
 
-    function updateCountdown() {
-      const targetDate = new Date(countdownTargetInput.value);
-      const now = new Date();
-      const diff = targetDate - now;
+  const daysEl = document.getElementById("days");
+  const hoursEl = document.getElementById("hours");
+  const minutesEl = document.getElementById("minutes");
+  const secondsEl = document.getElementById("seconds");
 
-      if (isNaN(targetDate.getTime()) || diff <= 0) {
-        daysEl.textContent = "0";
-        hoursEl.textContent = "00";
-        minutesEl.textContent = "00";
-        secondsEl.textContent = "00";
-        return;
-      }
+  function updateCountdown() {
+    const targetDate = new Date(COUNTDOWN_TARGET);
+    const now = new Date();
+    const diff = targetDate - now;
 
-      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-      const minutes = Math.floor((diff / (1000 * 60)) % 60);
-      const seconds = Math.floor((diff / 1000) % 60);
-
-      daysEl.textContent = String(days);
-      hoursEl.textContent = String(hours).padStart(2, "0");
-      minutesEl.textContent = String(minutes).padStart(2, "0");
-      secondsEl.textContent = String(seconds).padStart(2, "0");
+    if (isNaN(targetDate.getTime()) || diff <= 0) {
+      daysEl.textContent = "0";
+      hoursEl.textContent = "00";
+      minutesEl.textContent = "00";
+      secondsEl.textContent = "00";
+      return;
     }
 
-    countdownTargetInput.addEventListener("input", updateCountdown);
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((diff / (1000 * 60)) % 60);
+    const seconds = Math.floor((diff / 1000) % 60);
 
-    updateCountdown();
-    setInterval(updateCountdown, 1000);
-  </script>
+    daysEl.textContent = String(days);
+    hoursEl.textContent = String(hours).padStart(2, "0");
+    minutesEl.textContent = String(minutes).padStart(2, "0");
+    secondsEl.textContent = String(seconds).padStart(2, "0");
+  }
+
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+</script>
 </body>
 </html>
