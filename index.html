@@ -3,121 +3,68 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>m1l0s.io</title>
-  <link rel="stylesheet" href="./style.css" />
+  <title>Landing</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- Flying birds -->
+  <svg class="bird-svg bird-1" viewBox="0 0 24 12" aria-hidden="true">
+    <path d="M1 8c3-5 7-5 10 0c3-5 7-5 12 0" />
+  </svg>
+  <svg class="bird-svg bird-2" viewBox="0 0 24 12" aria-hidden="true">
+    <path d="M1 8c3-5 7-5 10 0c3-5 7-5 12 0" />
+  </svg>
+  <svg class="bird-svg bird-3" viewBox="0 0 24 12" aria-hidden="true">
+    <path d="M1 8c3-5 7-5 10 0c3-5 7-5 12 0" />
+  </svg>
+  <svg class="bird-svg bird-4" viewBox="0 0 24 12" aria-hidden="true">
+    <path d="M1 8c3-5 7-5 10 0c3-5 7-5 12 0" />
+  </svg>
+  <svg class="bird-svg bird-5" viewBox="0 0 24 12" aria-hidden="true">
+    <path d="M1 8c3-5 7-5 10 0c3-5 7-5 12 0" />
+  </svg>
+
   <main class="hero">
     <div class="avatar-wrap">
-      <img src="./assets/me.png" alt="Milos portrait" class="avatar-img" />
+      <img class="avatar-img" src="avatar.png" alt="Avatar" />
 
-      <div class="avatar-birds" aria-hidden="true">
-        <svg class="bird-svg bird-1" viewBox="0 0 40 20">
-          <path d="M2 14C8 7 14 6 20 12C26 6 32 7 38 14"></path>
-        </svg>
-        <svg class="bird-svg bird-2" viewBox="0 0 40 20">
-          <path d="M2 14C8 8 14 7 20 11C26 7 32 8 38 14"></path>
-        </svg>
-        <svg class="bird-svg bird-3" viewBox="0 0 40 20">
-          <path d="M2 15C8 9 14 8 20 12C26 8 32 9 38 15"></path>
-        </svg>
-        <svg class="bird-svg bird-4" viewBox="0 0 40 20">
-          <path d="M2 13C8 7 14 6 20 10C26 6 32 7 38 13"></path>
-        </svg>
-        <svg class="bird-svg bird-5" viewBox="0 0 40 20">
-          <path d="M2 14C8 8 14 7 20 11C26 7 32 8 38 14"></path>
-        </svg>
-      </div>
+      <svg class="avatar-birds" viewBox="0 0 220 220" aria-hidden="true">
+        <path d="M58 84c6-10 14-10 20 0c6-10 14-10 20 0" />
+        <path d="M132 62c5-8 11-8 16 0c5-8 11-8 16 0" />
+        <path d="M144 122c4-6 9-6 13 0c4-6 9-6 13 0" />
+      </svg>
     </div>
 
     <p class="hero-text">
-      Website is under construction, please come back later.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
     </p>
 
-    <section
-      class="countdown"
-      id="countdown"
-      data-deadline="2026-04-09T16:25:00"
-      aria-label="Countdown timer"
-    >
+    <section class="countdown" aria-label="Countdown">
       <div class="countdown-block">
-        <div class="countdown-number" data-unit="days">00</div>
+        <div class="countdown-number">12</div>
         <div class="countdown-label">Days</div>
       </div>
-
       <div class="countdown-colon">:</div>
-
       <div class="countdown-block">
-        <div class="countdown-number" data-unit="hours">00</div>
+        <div class="countdown-number">08</div>
         <div class="countdown-label">Hours</div>
       </div>
-
       <div class="countdown-colon">:</div>
-
       <div class="countdown-block">
-        <div class="countdown-number" data-unit="minutes">00</div>
+        <div class="countdown-number">44</div>
         <div class="countdown-label">Minutes</div>
       </div>
-
       <div class="countdown-colon">:</div>
-
       <div class="countdown-block">
-        <div class="countdown-number" data-unit="seconds">00</div>
+        <div class="countdown-number">19</div>
         <div class="countdown-label">Seconds</div>
       </div>
     </section>
 
     <div class="hero-actions">
-      <a href="mailto:hello@m1l0s.io?subject=Subscribe" class="hero-btn hero-btn--filled">
-        Subscribe
-      </a>
-      <a href="/about.html" class="hero-btn hero-btn--outline">
-        More Info
-      </a>
+      <a class="hero-btn hero-btn--filled" href="#">Subscribe</a>
+      <a class="hero-btn hero-btn--outline" href="About.html">More Info</a>
     </div>
   </main>
-
-  <script>
-    (function () {
-      const root = document.getElementById("countdown");
-      if (!root) return;
-
-      const deadline = new Date(root.dataset.deadline).getTime();
-      const daysEl = root.querySelector('[data-unit="days"]');
-      const hoursEl = root.querySelector('[data-unit="hours"]');
-      const minutesEl = root.querySelector('[data-unit="minutes"]');
-      const secondsEl = root.querySelector('[data-unit="seconds"]');
-
-      function pad(value) {
-        return String(value).padStart(2, "0");
-      }
-
-      function updateCountdown() {
-        const now = Date.now();
-        const diff = deadline - now;
-
-        if (diff <= 0) {
-          daysEl.textContent = "00";
-          hoursEl.textContent = "00";
-          minutesEl.textContent = "00";
-          secondsEl.textContent = "00";
-          return;
-        }
-
-        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-        const minutes = Math.floor((diff / (1000 * 60)) % 60);
-        const seconds = Math.floor((diff / 1000) % 60);
-
-        daysEl.textContent = pad(days);
-        hoursEl.textContent = pad(hours);
-        minutesEl.textContent = pad(minutes);
-        secondsEl.textContent = pad(seconds);
-      }
-
-      updateCountdown();
-      setInterval(updateCountdown, 1000);
-    })();
-  </script>
 </body>
 </html>
