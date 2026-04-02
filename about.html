@@ -40,17 +40,23 @@
           <div class="countdown-number" id="days">0</div>
           <div class="countdown-label">Days</div>
         </div>
+
         <div class="countdown-colon">:</div>
+
         <div class="countdown-block">
           <div class="countdown-number" id="hours">00</div>
           <div class="countdown-label">Hours</div>
         </div>
+
         <div class="countdown-colon">:</div>
+
         <div class="countdown-block">
           <div class="countdown-number" id="minutes">00</div>
           <div class="countdown-label">Minutes</div>
         </div>
+
         <div class="countdown-colon">:</div>
+
         <div class="countdown-block">
           <div class="countdown-number" id="seconds">00</div>
           <div class="countdown-label">Seconds</div>
@@ -60,22 +66,22 @@
 
     <div class="hero-actions">
       <a
-        href="./index.html"
-        class="hero-btn hero-btn--outline"
-      >
-        HOME
-      </a>
-
-      <a
         href="https://example.com"
-        class="hero-btn hero-btn--filled"
+        class="hero-btn hero-btn--outline"
         target="_blank"
         rel="noopener noreferrer"
       >
         CONTACT US
       </a>
+
+      <a href="./index.html" class="hero-btn hero-btn--filled">
+        HOME
+      </a>
     </div>
   </main>
-</body>
-</html>
 
+  <script>
+    const COUNTDOWN_TARGET = "2026-04-09T16:25:00";
+
+    const daysEl = document.getElementById("days");
+    const hoursEl = document
