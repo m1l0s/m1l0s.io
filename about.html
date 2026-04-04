@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About – m1l0s.io</title>
+  <title>m1l0s.io</title>
   <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
@@ -25,19 +25,56 @@
     </svg>
   </div>
 
-  <main class="hero">
-    <div class="avatar-wrap">
-      <img src="./assets/me.png" alt="Milos portrait" class="avatar-img" />
-    </div>
-
-    <p class="hero-text" style="visibility: hidden;">
-      About page content goes here.
+   <p class="hero-text" style="visibility: hidden;">
+      A website about identity and ideas, still quietly under construction.
     </p>
 
-    <div class="hero-actions">
-      <a href="mailto:hello@m1l0s.io" class="hero-btn hero-btn--outline">CONTACT US</a>
-      <a href="./index.html" class="hero-btn hero-btn--filled">HOME</a>
+    <div class="countdown-wrap" style="visibility: hidden;" aria-hidden="true">
+      <div class="countdown" aria-label="Countdown">
+        <div class="countdown-block">
+          <div class="countdown-number" id="days">0</div>
+          <div class="countdown-label">Days</div>
+        </div>
+
+        <div class="countdown-colon">:</div>
+
+        <div class="countdown-block">
+          <div class="countdown-number" id="hours">00</div>
+          <div class="countdown-label">Hours</div>
+        </div>
+
+        <div class="countdown-colon">:</div>
+
+        <div class="countdown-block">
+          <div class="countdown-number" id="minutes">00</div>
+          <div class="countdown-label">Minutes</div>
+        </div>
+
+        <div class="countdown-colon">:</div>
+
+        <div class="countdown-block">
+          <div class="countdown-number" id="seconds">00</div>
+          <div class="countdown-label">Seconds</div>
+        </div>
+      </div>
     </div>
+
+<div class="hero-actions">
+  <a
+    href="mailto:hello@m1l0s.io"
+    class="hero-btn hero-btn--outline"
+  >
+    CONTACT US
+  </a>
+
+  <a href="./index.html" class="hero-btn hero-btn--filled">
+    HOME
+  </a>
+</div>
   </main>
-</body>
-</html>
+
+  <script>
+    const COUNTDOWN_TARGET = "2026-04-09T16:25:00";
+
+    const daysEl = document.getElementById("days");
+    const hoursEl = document
