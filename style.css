@@ -230,8 +230,15 @@ body {
 
 /* BIRDS */
 
-.bird-svg {
+.birds-layer {
   position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 20;
+}
+
+.bird-svg {
+  position: absolute;
   left: 0;
   width: 18px;
   height: 9px;
@@ -241,11 +248,8 @@ body {
   stroke-linecap: round;
   stroke-linejoin: round;
   opacity: 0.72;
-  pointer-events: none;
-  z-index: 20;
 }
 
-/* startuju van leve ivice + različite faze */
 .bird-1 { top: 14vh; animation: birdFly1 28s linear infinite; animation-delay: -5s; }
 .bird-2 { top: 24vh; animation: birdFly2 32s linear infinite; animation-delay: -12s; }
 .bird-3 { top: 34vh; animation: birdFly3 26s linear infinite; animation-delay: -8s; }
@@ -253,43 +257,28 @@ body {
 .bird-5 { top: 42vh; animation: birdFly5 27s linear infinite; animation-delay: -10s; }
 
 @keyframes birdFly1 {
-  0% { transform: translateX(-150px) translateY(0) rotate(-2deg) scale(1); }
-  25% { transform: translateX(30vw) translateY(-10px) rotate(1deg) scale(1.03); }
-  50% { transform: translateX(60vw) translateY(8px) rotate(-1deg) scale(1.05); }
-  75% { transform: translateX(85vw) translateY(-6px) rotate(1deg) scale(1.02); }
-  100% { transform: translateX(calc(100vw + 150px)) translateY(0) rotate(0deg) scale(0.98); }
+  0% { transform: translateX(-150px) translateY(0); }
+  100% { transform: translateX(calc(100vw + 150px)) translateY(0); }
 }
 
 @keyframes birdFly2 {
-  0% { transform: translateX(-160px) translateY(0) rotate(1deg) scale(0.96); }
-  25% { transform: translateX(28vw) translateY(8px) rotate(-1deg) scale(0.98); }
-  50% { transform: translateX(58vw) translateY(-10px) rotate(1deg) scale(1); }
-  75% { transform: translateX(84vw) translateY(6px) rotate(-1deg) scale(0.99); }
-  100% { transform: translateX(calc(100vw + 160px)) translateY(0) rotate(0deg) scale(0.96); }
+  0% { transform: translateX(-160px) translateY(0); }
+  100% { transform: translateX(calc(100vw + 160px)) translateY(0); }
 }
 
 @keyframes birdFly3 {
-  0% { transform: translateX(-150px) translateY(0) rotate(-1deg) scale(1); }
-  25% { transform: translateX(32vw) translateY(-8px) rotate(1deg) scale(1.02); }
-  50% { transform: translateX(62vw) translateY(10px) rotate(-1deg) scale(1.04); }
-  75% { transform: translateX(88vw) translateY(-8px) rotate(1deg) scale(1.01); }
-  100% { transform: translateX(calc(100vw + 150px)) translateY(0) rotate(0deg) scale(0.98); }
+  0% { transform: translateX(-150px) translateY(0); }
+  100% { transform: translateX(calc(100vw + 150px)) translateY(0); }
 }
 
 @keyframes birdFly4 {
-  0% { transform: translateX(-170px) translateY(0) rotate(2deg) scale(0.94); }
-  25% { transform: translateX(26vw) translateY(-7px) rotate(0deg) scale(0.97); }
-  50% { transform: translateX(56vw) translateY(7px) rotate(1deg) scale(1); }
-  75% { transform: translateX(82vw) translateY(-9px) rotate(-1deg) scale(0.98); }
-  100% { transform: translateX(calc(100vw + 170px)) translateY(0) rotate(0deg) scale(0.95); }
+  0% { transform: translateX(-170px) translateY(0); }
+  100% { transform: translateX(calc(100vw + 170px)) translateY(0); }
 }
 
 @keyframes birdFly5 {
-  0% { transform: translateX(-145px) translateY(0) rotate(-1deg) scale(0.98); }
-  25% { transform: translateX(31vw) translateY(9px) rotate(1deg) scale(1); }
-  50% { transform: translateX(63vw) translateY(-9px) rotate(-1deg) scale(1.03); }
-  75% { transform: translateX(87vw) translateY(5px) rotate(1deg) scale(1); }
-  100% { transform: translateX(calc(100vw + 145px)) translateY(0) rotate(0deg) scale(0.97); }
+  0% { transform: translateX(-145px) translateY(0); }
+  100% { transform: translateX(calc(100vw + 145px)) translateY(0); }
 }
 
 /* MOBILE */
