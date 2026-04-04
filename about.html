@@ -3,83 +3,41 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>m1l0s.io</title>
+  <title>About – m1l0s.io</title>
   <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
+  <div class="birds-layer" aria-hidden="true">
+    <svg class="bird-svg bird-1" style="--bird-index:0" viewBox="0 0 40 20">
+      <path d="M2 14C8 7 14 6 20 12C26 6 32 7 38 14"></path>
+    </svg>
+    <svg class="bird-svg bird-2" style="--bird-index:1" viewBox="0 0 40 20">
+      <path d="M2 14C8 8 14 7 20 11C26 7 32 8 38 14"></path>
+    </svg>
+    <svg class="bird-svg bird-3" style="--bird-index:2" viewBox="0 0 40 20">
+      <path d="M2 15C8 9 14 8 20 12C26 8 32 9 38 15"></path>
+    </svg>
+    <svg class="bird-svg bird-4" style="--bird-index:3" viewBox="0 0 40 20">
+      <path d="M2 13C8 7 14 6 20 10C26 6 32 7 38 13"></path>
+    </svg>
+    <svg class="bird-svg bird-5" style="--bird-index:4" viewBox="0 0 40 20">
+      <path d="M2 14C8 8 14 7 20 11C26 7 32 8 38 14"></path>
+    </svg>
+  </div>
+
   <main class="hero">
     <div class="avatar-wrap">
       <img src="./assets/me.png" alt="Milos portrait" class="avatar-img" />
-
-      <div class="avatar-birds" aria-hidden="true">
-        <svg class="bird-svg bird-1" viewBox="0 0 40 20">
-          <path d="M2 14C8 7 14 6 20 12C26 6 32 7 38 14"></path>
-        </svg>
-        <svg class="bird-svg bird-2" viewBox="0 0 40 20">
-          <path d="M2 14C8 8 14 7 20 11C26 7 32 8 38 14"></path>
-        </svg>
-        <svg class="bird-svg bird-3" viewBox="0 0 40 20">
-          <path d="M2 15C8 9 14 8 20 12C26 8 32 9 38 15"></path>
-        </svg>
-        <svg class="bird-svg bird-4" viewBox="0 0 40 20">
-          <path d="M2 13C8 7 14 6 20 10C26 6 32 7 38 13"></path>
-        </svg>
-        <svg class="bird-svg bird-5" viewBox="0 0 40 20">
-          <path d="M2 14C8 8 14 7 20 11C26 7 32 8 38 14"></path>
-        </svg>
-      </div>
     </div>
 
     <p class="hero-text" style="visibility: hidden;">
-      A website about identity and ideas, still quietly under construction.
+      About page content goes here.
     </p>
 
-    <div class="countdown-wrap" style="visibility: hidden;" aria-hidden="true">
-      <div class="countdown" aria-label="Countdown">
-        <div class="countdown-block">
-          <div class="countdown-number" id="days">0</div>
-          <div class="countdown-label">Days</div>
-        </div>
-
-        <div class="countdown-colon">:</div>
-
-        <div class="countdown-block">
-          <div class="countdown-number" id="hours">00</div>
-          <div class="countdown-label">Hours</div>
-        </div>
-
-        <div class="countdown-colon">:</div>
-
-        <div class="countdown-block">
-          <div class="countdown-number" id="minutes">00</div>
-          <div class="countdown-label">Minutes</div>
-        </div>
-
-        <div class="countdown-colon">:</div>
-
-        <div class="countdown-block">
-          <div class="countdown-number" id="seconds">00</div>
-          <div class="countdown-label">Seconds</div>
-        </div>
-      </div>
+    <div class="hero-actions">
+      <a href="mailto:hello@m1l0s.io" class="hero-btn hero-btn--outline">CONTACT US</a>
+      <a href="./index.html" class="hero-btn hero-btn--filled">HOME</a>
     </div>
-
-<div class="hero-actions">
-  <a
-    href="mailto:hello@m1l0s.io"
-    class="hero-btn hero-btn--outline"
-  >
-    CONTACT US
-  </a>
-
-  <a href="./index.html" class="hero-btn hero-btn--filled">
-    HOME
-  </a>
-</div>
   </main>
-
-  <script>
-    const COUNTDOWN_TARGET = "2026-04-09T16:25:00";
-
-    const daysEl = document.getElementById("days");
-    const hoursEl = document
+</body>
+</html>
